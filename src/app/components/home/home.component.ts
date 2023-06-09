@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'home',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private snack:MatSnackBar) { }
+
+  btnClick() {
+    console.log("btn click");
+    this.snack.open("Hey, welcome to this app", "Cancel");
+  }
 }
